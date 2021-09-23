@@ -1,2 +1,2 @@
 # Rollback
-Rollback back eploymentwhen something fail
+Rollback back deployment when something fails
