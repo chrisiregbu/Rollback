@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Rollback deployments
           command: |
-            templateFile="cd ..\template.yml"
+            templateFile="template.yml"
             aws cloudformation deploy \
               --template-file ${templateFile} \
               --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
