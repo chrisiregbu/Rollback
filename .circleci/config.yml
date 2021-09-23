@@ -5,7 +5,15 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 
 commands:
-  destroy_environments:
+  # Exercise: Reusable Job Code
+  print_pipeline_id:
+    parameters:
+      id: 
+        type: string
+    steps:
+      - run: echo << parameters.id >>
+      
+  destroy_environment:
     steps:
       - run:
           name: Destroy environment
@@ -34,7 +42,7 @@ jobs:
       # Fail the job intentionally to simulate an error.
       # Uncomment the line below if you want to fail the current step
       #- run: return 1
-      - destroy_environments
+      - destroy_environment
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
